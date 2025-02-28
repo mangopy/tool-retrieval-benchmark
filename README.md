@@ -82,15 +82,16 @@ We sincerely thank prior work, such as [MAIR](https://github.com/sunnweiwei/MAIR
 
 
 ## Citation
+This work
 ```text
-@inproceedings{Sun2024MAIR,
-  title={MAIR: A Massive Benchmark for Evaluating Instructed Retrieval},
-  author={Weiwei Sun and Zhengliang Shi and Jiulong Wu and Lingyong Yan and Xinyu Ma and Yiding Liu and Min Cao and Dawei Yin and Zhaochun Ren},
-  booktitle={EMNLP},
-  year={2024},
+@article{ToolRetrieval,
+      title    = {Retrieval Models Aren't Tool-Savvy: Benchmarking Tool Retrieval for Large Language Models},
+      author   = {Zhengliang Shi, Yuhan Wang, Lingyong Yan, Pengjie Ren, Shuaiqiang Wang, Dawei Yin, Zhaochun Ren},
+      year     = 2025,
+      journal  = {arXiv},
 }
 ```
-
+Our previous work
 ```text
 @inproceedings{autotools,
 	title     = {Tool Learning in the Wild: Empowering Language Models as Automatic Tool Agents},
