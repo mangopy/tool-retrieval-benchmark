@@ -1,25 +1,426 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<meta http-equiv="Cache-Control" content="max-age=86400" />
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Directory listing for /</title>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Retrieval Models Aren’t Tool-Savvy: Benchmarking Tool Retrieval for Large Language Models">
+  <meta name="keywords" content="MathVista, Math Vista">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🔍 Retrieval Models Aren’t Tool-Savvy: <br> Benchmarking Tool Retrieval for Large Language Models</title>
+
+
+  <!-- <link rel="icon" href="./assets/images/title.png"> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./assets/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./assets/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/leaderboard.css">
+
+ <script type="text/javascript" src="assets/js/sort-table.js" defer></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./assets/js/fontawesome.all.min.js"></script>
+  <script src="./assets/js/bulma-carousel.min.js"></script>
+  <script src="./assets/js/bulma-slider.min.js"></script>
+  <script src="./assets/js/explorer-index.js"></script>
+  <script src="./assets/js/question_card.js"></script>
+
+  <script src="./assets/js/leaderboard_testmini.js"></script>
+  <script src="./data/results/output_folders.js" defer></script>
+  <script src="./data/results/model_scores.js" defer></script>
+
+  <script src="./visualizer/data/data_public.js" defer></script>
 </head>
 <body>
-<h1>Directory listing for /</h1>
-<hr>
-<ul>
-<li><a href=".git/">.git/</a></li>
-<li><a href=".gitignore">.gitignore</a></li>
-<li><a href="all.json">all.json</a></li>
-<li><a href="cache/">cache/</a></li>
-<li><a href="e5-small-gta.json">e5-small-gta.json</a></li>
-<li><a href="example/">example/</a></li>
-<li><a href="gorilla-tensor%2Cgta.json">gorilla-tensor,gta.json</a></li>
-<li><a href="gorilla-tensor.json">gorilla-tensor.json</a></li>
-<li><a href="README.md">README.md</a></li>
-<li><a href="requirements.yml">requirements.yml</a></li>
-<li><a href="toolret/">toolret/</a></li>
-</ul>
-<hr>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            <!-- <img src="assets/images/csbench_logo_2.png" style="width:1em;vertical-align: middle" alt="Logo"/> -->
+            <!-- <span class="csbench" style="vertical-align: middle">CS-Bench</span> -->
+            </h1>
+          <h2 class="title is-3" style="margin-top: 0px; margin-bottom: 50px;">
+            <!-- <img src="assets/images/title.png" style="width:1em;vertical-align: middle" alt="Logo"/> -->
+           🔍 Retrieval Models Aren’t Tool-Savvy: <br> Benchmarking Tool Retrieval for Large Language Models
+          </h2>
+            
+          <h2 class="subtitle is-3 publication-subtitle"></h2>
+
+            <div class="is-size-5 publication-authors", style="width: 100%; margin: 15px auto;", >
+              <span class="author-block"><a href="https://shizhl.github.io/">Zhengliang Shi</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://yanlingyong.net/">Yuhan Wang</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://yanlingyong.net/">Lingyong Yan</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://fengyue-leah.github.io/">Pengjie Ren</a><sup>1</sup>,</span>
+              <span class="author-block"><a href="https://scholar.google.com/citations?user=LAeLBYoAAAAJ&hl=zh-CN">Shuaiqiang Wang</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://www.yindawei.com/">Dawei Yin</a><sup>2</sup>,</span>
+              <span class="author-block"><a href="https://renzhaochun.github.io/">Zhaochun Ren</a><sup>3</sup></span>
+          </div>
+  
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup style="color:#ed4b82">1</sup>Shandong University</span>
+              <span class="author-block"><sup style="color:#1a4ebf">2</sup>Baidu Inc.</span>
+              <span class="author-block"><sup style="color:#1a4ebf">3</sup>Leiden University</span><br>
+            </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+              <span class="link-block">
+                <a href=""class="external-link button is-normal is-rounded is-light">
+                
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://github.com/mangopy/tool-retrieval-benchmark"
+                   class="external-link button is-normal is-rounded is-light">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://huggingface.co/collections/mangopy/tool-retrieval-67becd739af04daa71c88db0"
+		   class="external-link button is-normal is-rounded is-light"> 
+                  <span class="icon">
+<!--                       <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">🔗</p>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/Yyy0530/leaderboard"
+                   class="external-link button is-normal is-rounded is-light">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">🤗</p>
+                      <!-- 🔗 -->
+                  </span>
+                  <span>Leaderboard</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/Yyy0530/tool_retriever"
+                   class="external-link button is-normal is-rounded is-light">
+                  <span class="icon">
+                      <!-- <i class="far fa-images"></i> -->
+                      <p style="font-size:18px">🤗</p>
+                      <!-- 🔗 -->
+                  </span>
+                  <span>Online demo</span>
+                </a>
+              </span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-top: 10px; margin-bottom: -100px;"></div>
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Current Status and Challenges of Reasoning Models. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Brief Introduction</h2>
+        <div class="content has-text-justified">
+          <p>
+            Tool learning aims to augment large language models (LLMs) with diverse tools, enabling them to act as agents for solving practical tasks.
+Due to the limited context length of tool-using LLMs, adopting information retrieval (IR) models to select useful tools from large toolsets is a critical initial step.
+However, the performance of IR models in tool retrieval tasks remains underexplored and unclear. Most tool-use benchmarks simplify this step by manually pre-annotating a small set of relevant tools for each task, which is far from the real-world scenarios.
+In this paper, we propose ToolRet, a heterogeneous tool retrieval benchmark comprising 7.6k diverse retrieval tasks, and a corpus of 43k tools, collected from existing datasets.
+We benchmark six types of models on ToolRet. Surprisingly, even the models with strong performance in conventional IR benchmarks, exhibit poor performance on \ours.
+This low retrieval quality degrades the task pass rate of tool-use LLMs. As a further step, we contribute a large-scale training dataset with over 200k instances, which substantially optimizes the tool retrieval ability of IR models.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="box m-5">
+      <div class="content has-text-centered">
+        <img src="assets/images/intro.png" alt="geometric reasoning" style="width:50%; height:50%; object-fit: contain; margin-top: -70px; margin-bottom: -10px;"/>
+        <p style="margin-top: 10px;">
+          Our pilot experiment, which reveal two key observations: (i) and (ii)
+        </p>
+      </div>
+    </div>
+    <!--/ Current Status and Challenges of Reasoning Models. -->
+  </div>
+</section>
+
+<!-- <section class="section">
+  <div class="container" style="margin-top: 10px; margin-bottom: -100px;"></div>
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            In this work, we propose AutoTools, a framework that enables LLMs to automate the tool-use workflow. Specifically, the LLM automatically transforms tool documentation into callable functions, verifying syntax and runtime correctness. Then, the LLM integrates these functions into executable programs to solve practical tasks, flexibly grounding tool-use actions into its reasoning processes. Extensive experiments on a wide range of benchmarks illustrate the superiority of our framework. 
+          </p>
+          <p>
+            Inspired by these promising results, we further investigate how to improve the expertise of LLMs, especially open-source LLMs with fewer parameters, within AutoTools. Thus, we propose the AutoTools-Learning approach, training the LLMs with three learning tasks on 34k instances of high-quality synthetic data, including documentation understanding, relevance learning and function programming. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container" style="margin-top: -10vh;">
+    <!-- Search-o1: An Autonomous Knowledge Retrieval-Augmented Reasoning Framework. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- <h2 class="title is-3">Search-o1: An Autonomous Knowledge Retrieval-Augmented Reasoning Framework</h2> -->
+        <div class="content has-text-justified">
+          <p>
+            In this work, we focus on two research questions:
+            (i) Are existing information retrieval models are good at tool retrieval? and
+            (ii) To what extent does the tool retrieval quality affect the downstream task pass rate?
+          </p>
+          <p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- DATASET SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 csbench">
+    <!-- <img src="assets/images/csbench_logo_2.png" style="width:1.5em;vertical-align: middle" alt="Logo"/> -->
+    <span class="csbench" style="width:1.5em;vertical-align: middle">The proposed benchmark: ToolRet</span>
+  </h1>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <!-- Comparative Analysis of Approaches. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <!-- <h2 class="title is-3">Comparative Analysis of Approaches</h2> -->
+        <div class="content has-text-justified">
+          <p>
+            To comprehensively evaluate IR models on various tool retrieval scenarios, we introduce ToolRet, the first large-scale tool retrieval benchmark that comprises 7.6k diverse retrieval tasks and a corpus of 43k tools, collected from existing dataset resources. We explain the three key processes in building the ToolRet.
+          </p>
+          <ul>
+            <li>
+              <strong>Data collection</strong> We collect query-tool datasets from the following sources: (i) Tool-use agent benchmarks from published research papers in AI conferences, such as ACL and NeurIPS; (ii) Related conference resources such as AppBench in EMNLP and ToolLens in CIKM; and (iii) Other publicly available datasets from the open-source community, e.g., HuggingFace. The collected data is carefully curated to cover a wide range of practical tool requirements, comprising diverse types of tool documentation, domains, and varying query lengths.
+              Then, we standardize the format of all the collected tasks, aligning them with retrieval tasks similar to the format in MTEB, where each retrieval task contains a query and target tools (e.g., labels).
+            </li>
+            <li>
+              <strong>Data sampling</strong> After collecting the datasets, we observe data size imbalances across different datasets. Besides, some datasets are extremely large with substantial redundant content, making comprehensive model evaluation both inefficient and unnecessary. Therefore, we streamline them through effective data sampling while maintaining its evaluation integrity.
+            </li>
+            <li>
+              <strong>Instruction construction</strong> To support the instructional retrieval setting of our benchmark, we also introduce a target-aware strategy to supplement each query with an instruction using the powerful LLMs (i.e., gpt-4o).
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--/ Comparative Analysis of Approaches. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="margin-top: -130px; margin-bottom: -70px;">
+    <div class="columns is-centered">
+      <div class="column is-full content">
+        <!-- 案例研究 1 -->
+        <div class="box m-5">
+          <div class="content has-text-centered">
+            <img src="assets/images/statistic.png" alt="geometric reasoning" style="width:90%;object-fit: contain; margin-top: 5px; margin-bottom: 5px;"/>
+            <p style="margin-top: 5px;">
+              Statistics of the ToolRet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--<section class="section">-->
+<!--  <div class="container" style="margin-bottom: 2vh;">-->
+<!--    &lt;!&ndash; Comparative Analysis of Approaches. &ndash;&gt;-->
+<!--    <div class="columns is-centered has-text-centered">-->
+<!--      <div class="column is-four-fifths">-->
+<!--        &lt;!&ndash; <h2 class="title is-3">Comparative Analysis of Approaches</h2> &ndash;&gt;-->
+<!--        <div class="content has-text-justified">-->
+<!--          <p>-->
+<!--            Experiment results-->
+<!--          </p>-->
+<!--          <ul>-->
+<!--            <li>-->
+<!--              <strong>Data collection</strong>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <strong>Data sampling</strong>-->
+<!--            </li>-->
+<!--            <li>-->
+<!--              <strong>Instruction construction</strong>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;/ Comparative Analysis of Approaches. &ndash;&gt;-->
+<!--  </div>-->
+<!--</section>-->
+
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 csbench">
+    <!-- <img src="assets/images/csbench_logo_2.png" style="width:1.5em;vertical-align: middle" alt="Logo"/> -->
+    <span class="csbench" style="width:1.5em;vertical-align: middle">Experimental Results</span>
+  </h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+          <p>
+            We evaluate a wide range of retrieval models on ToolRet. Our evaluation also supports two main settings, including `w/ inst.` and  `w/o inst.`.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container" style="margin-top: -120px; margin-bottom: 0px;">
+    <div class="columns is-centered">
+        <!-- 案例研究 1 -->
+        <div class="box m-5">
+          <div class="content has-text-centered">
+            <img src="assets/images/w_o_inst.png" alt="Evaluation with non-instructional retrieval setting." style="width:100%; height:400px; object-fit: contain; margin-top: 20px; margin-bottom: -20px;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-top: -100px; margin-bottom: -50px;">
+    <div class="columns is-centered">
+        <!-- 案例研究 1 -->
+        <div class="box m-5">
+          <div class="content has-text-centered">
+            <img src="assets/images/w_inst.png" alt="Evaluation with instructional retrieval setting." style="width:100%; height:400px; object-fit: contain; margin-top: 10px; margin-bottom: -20px;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+
+
+
+<!-- RESULTS SECTION -->
+<section class="hero is-light is-small">
+  <div class="hero-body has-text-centered">
+    <h1 class="title is-1 csbench">Impact of retrieval quality on the downstream tasks</h1>
+  </div>
+</section>
+        
+<section class="section">
+  <div class="container" style="margin-top: -50px; margin-bottom: -80px;">
+    <div class="columns is-centered">
+      <div class="column is-full content">
+        <div class="box m-5">
+           <p style="margin-top: 10px;">
+              We also qualitatively evaluate and analyze the impact of retrieval quality on the downstream task-solving pass rate. We conduct different experiments on ToolBench where the tool-use LLM is paired with toolset retrieved by various retrieval model or pre-annotated by offical datasets.
+            </p>
+          <div class="content has-text-centered">
+            <img src="assets/images/downstream.png" alt="downstream" style="width:100%; height:300px; object-fit: contain; margin-top: -10px; margin-bottom: 10px;"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- @PAN TODO: bibtex -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">Citation</h2>
+    <pre><code>@article{ToolRetrieval,
+      title    = {Retrieval Models Aren't Tool-Savvy: Benchmarking Tool Retrieval for Large Language Models},
+      author   = {Zhengliang Shi, Yuhan Wang, Lingyong Yan, Pengjie Ren, Shuaiqiang Wang, Dawei Yin, Zhaochun Ren},
+      year     = 2025,
+      journal  = {arXiv},
+}
+</code></pre>
+  </div>
+</section>
+
+
+</section>
+
+
+<footer class="footer">
+  <!-- <div class="container"> -->
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://csbench.github.io/">CS-Bench</a> and <a href="https://Mathvista.github.io/">MathVista</a>, licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+</footer>
+
 </body>
 </html>
