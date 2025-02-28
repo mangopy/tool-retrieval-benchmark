@@ -16,7 +16,41 @@
 ## A New Benchmark -- ToolRet
 A concrete example for our evaluation dataset.
 ```json
-
+{
+    "id": "apigen_query_5",
+    "query": "Given an initial population of 500 bacteria with a growth rate of 0.3 per minute and a doubling time of 20 minutes, what will be the population after 45 minutes?",
+    "labels": [
+        {
+            "id": "apigen_tool_272",
+            "doc": {
+                "name": "bacterial_growth",
+                "description": "Calculates the bacterial population after a given time based on the initial population and growth rate.",
+                "parameters": {
+                    "initial_population": {
+                        "description": "The initial bacterial population.",
+                        "type": "int",
+                        "default": 20
+                    },
+                    "growth_rate": {
+                        "description": "The growth rate per unit time.",
+                        "type": "float",
+                        "default": 20
+                    },
+                    "time": {
+                        "description": "The time elapsed.",
+                        "type": "float"
+                    },
+                    "doubling_time": {
+                        "description": "The doubling time of the bacteria in minutes. Defaults to 20.",
+                        "type": "float, optional"
+                    }
+                }
+            },
+            "relevance": 1
+        }
+    ],
+    "instruction": "Given a `bacterial population prediction` task, retrieve tools that calculate population growth by processing parameters such as initial population, growth rate, elapsed time, and doubling time to provide the projected population size."
+}
 ```
 
 > We release part of our benchmark. The full evaluation dataset will be released after the review processing. See the following `Resource` part for details.
@@ -30,11 +64,28 @@ conda env create -f requirements.yml
 
 ### Quick start
 In this work, we systematically evaluate a wide range of advanced IR models.
-Below, we show an example for evaluation, where we evaluate the `xxx`.
+Below, we show an example for evaluation, where we evaluate the embedding model `intfloat/e5-small-v2`.
 
 ```python
+# evaluate embedding models
+from toolret.eval import eval_retrieval
+from toolret.config import _MODEL, _TASK
+import os
 
+
+model = 'intfloat/e5-small-v2' # _MODEL[0]
+task = ['all']
+output_file = ','.join(task)+'.json'
+results = eval_retrieval(model_name=model,
+                        tasks=task,
+                        category='all',
+                        output_file=output_file,
+                        is_inst=True)
+print(results)
 ```
+
+The code can be also found in `example/embedding.py` for reference.
+
 
 ### Protocol for model evaluation
 
