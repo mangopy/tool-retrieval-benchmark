@@ -118,13 +118,12 @@ For the neural dense retrieval or embedding models, the configs are listed below
 For the re-ranking based models, we also provide their evaluation config as below.
 
 | Model name                                                                                                    | batch size<br/> (for encode documentation or query) | Backend APIs <br/>(to load the model) |
-|:--------------------------------------------------------------------------------------------------------------|:----------------------------------------------------:|:-------------------------------------:|
-| [castorini/monot5-base-msmarco](https://huggingface.co/castorini/monot5-base-msmarco)                         |                                                     |                                       |
-| [jinaai/jina-reranker-v2-base-multilingual](https://huggingface.co/jinaai/jina-reranker-v2-base-multilingual) |                                                     |                                       |
-| [BAAI/bge-reranker-v2-gemma](https://huggingface.co/BAAI/bge-reranker-v2-gemma)                               |                                                     |                                       |
-| [BAAI/bge-reranker-v2-m3](https://huggingface.co/BAAI/bge-reranker-v2-m3)                                     |                                                     |                                       |
-| [mixedbread-ai/mxbai-rerank-large-v1](https://huggingface.co/mixedbread-ai/mxbai-rerank-large-v1)             |                                                     |                                       |
-
+|:--------------------------------------------------------------------------------------------------------------|:----------------------------------------------------|:-------------------------------------:|
+| [castorini/monot5-base-msmarco](https://huggingface.co/castorini/monot5-base-msmarco)                         |                                                     |         AnswerDotAI/rerankers         |
+| [jinaai/jina-reranker-v2-base-multilingual](https://huggingface.co/jinaai/jina-reranker-v2-base-multilingual) |                                                     |         AnswerDotAI/rerankers         |
+| [BAAI/bge-reranker-v2-gemma](https://huggingface.co/BAAI/bge-reranker-v2-gemma)                               |                                                     |        FlagOpen/FlagEmbedding         |
+| [BAAI/bge-reranker-v2-m3](https://huggingface.co/BAAI/bge-reranker-v2-m3)                                     |                                                     |        FlagOpen/FlagEmbedding         |
+| [mixedbread-ai/mxbai-rerank-large-v1](https://huggingface.co/mixedbread-ai/mxbai-rerank-large-v1)             |                                                     |         AnswerDotAI/rerankers         |
 
 
 
