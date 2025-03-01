@@ -8,10 +8,9 @@
 ## News
 
 - **[2025.3.4]** Our [paper]() is submitted in arxiv! See our [paper]() for details.
-- **[2024.3.1]** We re-organize code and the dataset is released on HuggingFace([Toolset].
+- **[2024.3.1]** We re-organize code and the dataset is released on HuggingFace([Toolset](https://huggingface.co/datasets/mangopy/ToolRet-Tools) and [Queries](https://huggingface.co/datasets/mangopy/ToolRet-Queries)). 
 - **[2024.2.21]** The blog for our work can be accessed by clicking this [link](https://mangopy.github.io/tool-retrieval-benchmark/).
 - **[2024.2.17]** Main code is released on this [Github](https://github.com/mangopy/tool-retrieval-benchmark/).
-- (https://huggingface.co/datasets/mangopy/ToolRet-Tools) and [Queries](https://huggingface.co/datasets/mangopy/ToolRet-Queries)). Please click the link for more details. 
 - **[2024.12.15]** The dataset has been built.
 
   
