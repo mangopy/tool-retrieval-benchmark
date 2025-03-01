@@ -366,13 +366,15 @@ def eval_rerank(model_name,
         model = FlagRankModel(model_name)
     else:
         model = HFRankModel(model_name)
-    outputs = {}
+    output = {}
+    collection = {}
     for task in tasks:
         queries = load_queries(task)['queries']
         tools = load_dataset(_FIRST_STAGE, task)['tools']
         tools = {item['id']: item['tools'] for item in tools}
-        results = defaultdict(lambda : defaultdict(float))
 
+        # re-ranking tools
+        result = defaultdict(lambda : defaultdict(float))
         for item in tqdm(queries):
             candidates = tools[item['id']][:100]
             instruction = None if instruct else item['instruction']
@@ -380,9 +382,16 @@ def eval_rerank(model_name,
                                              candidates=[tool['documentation'] for tool in candidates],
                                              instruction=instruction)
             for tool, score in zip(candidates, scores):
-                results[item['id']][tool['id']] = float(score)
-        outputs[task] = results
-    return outputs
+                result[item['id']][tool['id']] = float(score)
+        output[task] = result
+
+        # evaluation
+        qrels = {}
+        for item in queries:
+            qrels[item['id']] = {str(x['id']): int(x['relevance']) for x in json.loads(item['labels'])}
+        collection[task] = trec_eval(qrels=qrels, results=result)
+
+    return output
 
 
 def eval_bm25(tasks,
