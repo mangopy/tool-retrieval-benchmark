@@ -175,7 +175,7 @@ Our benchmark is built by collecting existing well-established datasets. We prov
 1. The raw dataset can be downloaded from the following link.
 
 | Dataset         | Note                                                                                                                  |                                         Link                                         |
-|:----------------|----------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
+|:----------------|----------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
 | Raw data        | The raw data contains all the full collected datasets (before sampling via k-means)                                   | [Huggingface dataset](https://huggingface.co/datasets/mangopy/ToolRet-before-sample) |
 | ToolRet-Queries | The final evaluation benchmark, which is a subset sampled from raw dataset through k-means. (This is our v0 version.) |    [Huggingface dataset](https://huggingface.co/datasets/mangopy/ToolRet-Queries)    |
 | ToolRet-Tools   | The tool retrieval corpus, which contains 43k+ tools collected from existing tool-use datasets.                       |     [Huggingface dataset](https://huggingface.co/datasets/mangopy/ToolRet-Tools)     |
@@ -186,7 +186,7 @@ Our benchmark is built by collecting existing well-established datasets. We prov
 2. The trained IR models can be downloaded from the following link
 
 | Dataset             | Note                                                      |         Link          |
-|:--------------------|----------------------------------------------------------:|---------------------:|
+|:--------------------|----------------------------------------------------------|---------------------|
 | 🔥bge-large-en-v1.5 | The [bge-large-en-v1.5](https://huggingface.co/BAAI/bge-large-en-v1.5) model trained on ToolRet-Train. | [Huggingface model](https://huggingface.co/mangopy/ToolRet-trained-bge-large-en-v1.5) |
 | 🔥bge-base-en-v1.5  | The [bge-base-en-v1.5](https://huggingface.co/BAAI/bge-base-en-v1.5) model trained on ToolRet-Train   | [Huggingface model](https://huggingface.co/mangopy/ToolRet-trained-bge-base-en-v1.5) |
 | 🔥e5-large-v2       | The [e5-large-v2](https://huggingface.co/intfloat/e5-large-v2) model trained on ToolRet-Train         | [Huggingface model](https://huggingface.co/mangopy/ToolRet-trained-e5-large-v2) |
