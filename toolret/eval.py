@@ -7,13 +7,16 @@ import faiss
 import pytrec_eval
 from typing import List, Union, Tuple
 from .encode import encode_data, gritlm_instruction, get_pool
-from .config import _QUERY_REPO, _TOOL_REPO, _MODEL, _TASK, _CATEGORY
+from .config import _QUERY_REPO, _TOOL_REPO, _MODEL, _TASK, _CATEGORY, _FIRST_STAGE
 from .utils import write_file
 from transformers import (AutoTokenizer, AutoModel)
 from sentence_transformers import SentenceTransformer
 import torch
 import os
 import json
+from collections import defaultdict
+from typing import override
+
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 token = os.getenv("HUGGINGFACE_TOKEN")
@@ -297,58 +300,89 @@ def eval_retrieval(model_name: str,
         # print_results(collection)
     return collection
 
-def eval_rerank(model,
-                tasks,
+from typing import override
+
+class RankModel:
+    def __init__(self, model_name):
+        self.model_name = model_name
+        self.model, _ = self.load_model_tokenizer(model_name)
+
+    def load_model_tokenizer(self, model_name):
+        try:
+            if 'bge-rerank' in model_name:
+                from FlagEmbedding import FlagAutoModel, FlagReranker, FlagLLMReranker  # a python library, please `pip install flagembedding==1.3.3`
+                if "gemma" in model_name:
+                    model = FlagLLMReranker(model_name, use_fp16=True, batch_size=2)
+                else:
+                    model = FlagReranker(model_name, use_fp16=True)
+            else:
+                if "t5" in model_name:
+                    model_type = "t5"
+                else:
+                    model_type = 'cross-encoder'
+                from rerankers import Reranker  # a python library, please `pip install rerankers==0.5.0`
+                model = Reranker(model_name=model_name, model_type=model_type)
+            return model, None
+        except Exception as e:
+            print(f"load model error: {e}")
+
+
+    def compute_rank_score(self, query: str, tools: str, instruction: str = ''):
+        raise NotImplementedError
+
+
+class FlagRankModel(RankModel):
+    def __init__(self, model_name):
+        super().__init__(model_name)
+
+    @override
+    def compute_rank_score(self, query: str, tools: List[str], instruction: str = None):
+        if instruction:
+            query = f"Instruct: {instruction}\nQuery: {query}"
+            score = self.model.compute_score([[query, text] for text in tools])
+        else:
+            score = self.model.compute_score([[query, text] for text in tools])
+        return score
+
+class HFRankModel(RankModel):
+    def __init__(self, model_name):
+        super().__init__(model_name)
+
+    @override
+    def compute_rank_score(self, query: str, tools: List[str], instruction: str = None):
+        if instruction:
+            query = f"Instruct: {instruction}\nQuery: {query}"
+            score = self.model.rank(query, tools)
+        else:
+            score = self.model.rank(query, tools)
+        return score
+
+
+def eval_rerank(model_name,
+                tasks: List[str],
                 instruct=True,
                 first_stage=None):
-    if first_stage is None:
-        first_stage = load_dataset('MAIR-Bench/MAIR-Results-text-embedding-3-small')['train']
-    output_dict = defaultdict(list)
+    if 'bge-rerank' in model_name:
+        model = FlagRankModel(model_name)
+    else:
+        model = HFRankModel(model_name)
+    outputs = {}
     for task in tasks:
-        if task in output_dict:
-            continue
-        data = load_dataset('MAIR-Bench/MAIR-Queries', task)
-        docs = load_dataset('MAIR-Bench/MAIR-Docs', task)
-        for split in data:
-            doc_split = 'docs' if split == 'queries' else split.replace('_queries', '_docs')
-            try:
-                results = first_stage[task + '/' + split][-1]['results']
-            except:
-                results = first_stage[task + '/' + split][-1][-1]['results']
-            query_data = {item['qid']: item for item in data[split]}
-            doc_data = {item['id']: item for item in docs[doc_split]}
-            new_results = {}
-            for qid in tqdm(results):
-                new_results[qid] = {}
-                candidates = []
-                for doc_id in results[qid]:
-                    candidates.append(doc_data[doc_id])
-                candidates = candidates[:100]
+        queries = load_queries(task)['queries']
+        tools = load_dataset(_FIRST_STAGE, task)['tools']
+        tools = {item['id']: item['tools'] for item in tools}
+        results = defaultdict(lambda : defaultdict(float))
 
-                query = query_data[qid]['query']
-                if instruct:
-                    try:  # try to input instruction as prompt
-                        rankings = model.rank(query, [x['doc'] for x in candidates], prompt=query_data[qid]['instruction'])
-                    except:  #
-                        query = f"Instruct: {query_data[qid]['instruction']}\nQuery: {query}"
-                        rankings = model.rank(query, [x['doc'] for x in candidates])
-                else:
-                    rankings = model.rank(query, [x['doc'] for x in candidates])
-
-                for ranking in rankings:
-                    doc_id = candidates[ranking['corpus_id']]['id']
-                    new_results[qid][doc_id] = float(ranking['score'])
-
-            qrels = {}
-            for item in data[split]:
-                qrels[item['qid']] = {str(x['id']): int(x['score']) for x in item['labels']}
-            eval_results = trec_eval(qrels, new_results, k_values=(1, 5, 10, 100))
-            output_dict[task + '/' + split].append(
-                {'task': task, 'split': split, 'eval_results': eval_results, 'size': len(data[split]),
-                 'results': new_results})
-            print(task + '/' + split, eval_results)
-    print_results(output_dict)
-    return output_dict
+        for item in tqdm(queries):
+            candidates = tools[item['id']][:100]
+            instruction = None if instruct else item['instruction']
+            scores = model.compute_rank_score(query=item['query'],
+                                             candidates=[tool['documentation'] for tool in candidates],
+                                             instruction=instruction)
+            for tool, score in zip(candidates, scores):
+                results[item['id']][tool['id']] = float(score)
+        outputs[task] = results
+    return outputs
 
 
 def eval_bm25(tasks,
