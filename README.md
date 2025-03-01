@@ -53,7 +53,7 @@ A concrete example for our evaluation dataset.
 }
 ```
 
-> We release part of our benchmark. The full evaluation dataset will be released after the review processing. See the following `Resource` part for details.
+> The full evaluation dataset has been released. See the following `Resource` part for details.
 
 ## Python Environment
 ```shell
@@ -138,13 +138,28 @@ We evaluate a wide range of retrieval models on ToolRet. Our evaluation also sup
 
 Our benchmark is built by collecting existing well-established datasets. We provide the raw collected datasets and the processed version (e.g., the ToolRet).
 
+Our benchmark is built by collecting existing well-established datasets. We provide the raw collected datasets and the processed version (e.g., the ToolRet).
+
 1. The raw dataset can be downloaded from the following link.
 
-2. The evaluation benchmark, e.g., ToolRet, can be downloaded from the following link.
+| Dataset         | Note                                                                                                                  |                                         Link                                         |
+|:----------------|:----------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------:|
+| Raw data        | The raw data contains all the full collected datasets (before sampling via k-means)                                   | [Huggingface dataset](https://huggingface.co/datasets/mangopy/ToolRet-before-sample) |
+| ToolRet-Queries | The final evaluation benchmark, which is a subset sampled from raw dataset through k-means. (This is our v0 version.) |    [Huggingface dataset](https://huggingface.co/datasets/mangopy/ToolRet-Queries)    |
+| ToolRet-Tools   | The tool retrieval corpus, which contains 43k+ tools collected from existing tool-use datasets.                       |     [Huggingface dataset](https://huggingface.co/datasets/mangopy/ToolRet-Tools)     |
+| ToolRet-Train   | A large-scaling tool retrieval training datasets, which contains more than 200k tool retrieval tasks.                 | [Huggingface dataset] |
 
-3. The training dataset, e.g., ToolRet-train, can be downloaded from this link.
+> The ToolRet-Train will be released after the peer review period.
 
-4. The trained IR models can be downloaded from the following link
+2. The trained IR models can be downloaded from the following link
+
+| Dataset             | Note                                                      |         Link          |
+|:--------------------|:----------------------------------------------------------|:---------------------:|
+| 🔥bge-large-en-v1.5 | The [bge-large-en-v1.5]() model trained on ToolRet-Train. | [Huggingface model]() |
+| 🔥bge-base-en-v1.5  | The [bge-base-en-v1.5]() model trained on ToolRet-Train   | [Huggingface model]() |
+| 🔥e5-large-v2       | The [e5-large-v2]() model trained on ToolRet-Train        | [Huggingface model]() |
+| 🔥e5-base-v2        | The [e5-base-v2]() model trained on ToolRet-Train         | [Huggingface model]() |
+ 
 
 ## Acknowledgement
 We sincerely thank prior work, such as [MAIR](https://github.com/sunnweiwei/MAIR/) and [ToolBench](https://github.com/OpenBMB/ToolBench), which inspire this project or provide strong technique reference.
