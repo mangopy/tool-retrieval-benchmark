@@ -186,11 +186,11 @@ Our benchmark is built by collecting existing well-established datasets. We prov
 2. The trained IR models can be downloaded from the following link
 
 | Dataset             | Note                                                      |         Link          |
-|:--------------------|:----------------------------------------------------------|:---------------------:|
-| 🔥bge-large-en-v1.5 | The [bge-large-en-v1.5]() model trained on ToolRet-Train. | [Huggingface model]() |
-| 🔥bge-base-en-v1.5  | The [bge-base-en-v1.5]() model trained on ToolRet-Train   | [Huggingface model]() |
-| 🔥e5-large-v2       | The [e5-large-v2]() model trained on ToolRet-Train        | [Huggingface model]() |
-| 🔥e5-base-v2        | The [e5-base-v2]() model trained on ToolRet-Train         | [Huggingface model]() |
+|:--------------------|:----------------------------------------------------------:|:---------------------:|
+| 🔥bge-large-en-v1.5 | The [bge-large-en-v1.5](https://huggingface.co/BAAI/bge-large-en-v1.5) model trained on ToolRet-Train. | [Huggingface model](https://huggingface.co/mangopy/ToolRet-trained-bge-large-en-v1.5) |
+| 🔥bge-base-en-v1.5  | The [bge-base-en-v1.5](https://huggingface.co/BAAI/bge-base-en-v1.5) model trained on ToolRet-Train   | [Huggingface model](https://huggingface.co/mangopy/ToolRet-trained-bge-base-en-v1.5) |
+| 🔥e5-large-v2       | The [e5-large-v2](https://huggingface.co/intfloat/e5-large-v2) model trained on ToolRet-Train         | [Huggingface model](https://huggingface.co/mangopy/ToolRet-trained-e5-large-v2) |
+| 🔥e5-base-v2        | The [e5-base-v2](https://huggingface.co/intfloat/e5-base-v2) model trained on ToolRet-Train         | [Huggingface model](https://huggingface.co/mangopy/ToolRet-trained-e5-base-v2) |
  
 
 ## Acknowledgement
