@@ -1,6 +1,7 @@
 
 _QUERY_REPO = "mangopy/ToolRet-Queries"
 _TOOL_REPO = "mangopy/ToolRet-Tools"
+_FIRST_STAGE = 'ToolRet-retrieval-nv-embedd-v1'
 _TASK_2_CATEGORY = {
   "craft-math-algebra" : "code",
   "craft-tabmwp" : "code",
