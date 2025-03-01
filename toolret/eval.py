@@ -358,25 +358,37 @@ class HFRankModel(RankModel):
         return score
 
 
-def eval_rerank(model_name,
+def eval_rerank(model_name: str,
                 tasks: List[str],
                 instruct=True,
-                first_stage=None):
+                from_top_k: int = 100):
     if 'bge-rerank' in model_name:
         model = FlagRankModel(model_name)
     else:
         model = HFRankModel(model_name)
+
     output = {}
     collection = {}
+
+    # download the tools for mapping
+    tools = load_tools('all')
+    tools = {item['id']: item for item in tools}
+
     for task in tasks:
         queries = load_queries(task)['queries']
-        tools = load_dataset(_FIRST_STAGE, task)['tools']
-        tools = {item['id']: item['tools'] for item in tools}
+        # download the retrieval results as input candidates for re-ranking models
+        _candidates = load_dataset(_FIRST_STAGE, task)['tools']
 
-        # re-ranking tools
+        # mapping the retrieved tool id into tool
+        candidates = {}
+        for item in _candidates:
+            item['tools'] = sorted(item['tools'], key=lambda tool: tool['relevance'], reverse=True)
+            candidates[item['id']]  = [tools[tool['id']] for tool in item['tools']][:from_top_k]
+
+        # re-ranking process
         result = defaultdict(lambda : defaultdict(float))
         for item in tqdm(queries):
-            candidates = tools[item['id']][:100]
+            candidates = candidates[item['id']]
             instruction = None if instruct else item['instruction']
             scores = model.compute_rank_score(query=item['query'],
                                              candidates=[tool['documentation'] for tool in candidates],
