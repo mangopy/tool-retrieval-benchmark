@@ -164,6 +164,9 @@ Our benchmark is built by collecting existing well-established datasets. We prov
 ## Acknowledgement
 We sincerely thank prior work, such as [MAIR](https://github.com/sunnweiwei/MAIR/) and [ToolBench](https://github.com/OpenBMB/ToolBench), which inspire this project or provide strong technique reference.
 
+## Todo
+- [ ] The model checkpoint is uploading. Please wait from just few hours.
+- [ ] More details examples will be added to make the evaluation on our ToolRet benchmark more easier.
 
 ## Citation
 This work
