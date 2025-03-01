@@ -166,7 +166,7 @@ We sincerely thank prior work, such as [MAIR](https://github.com/sunnweiwei/MAIR
 
 ## Todo
 - [ ] The model checkpoint is uploading. Please wait from just few hours.
-- [ ] More details examples will be added to make the evaluation on our ToolRet benchmark more easier.
+- [ ] More detailed examples will be added to make the evaluation on our ToolRet benchmark more easier.
 
 ## Citation
 This work
