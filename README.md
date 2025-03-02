@@ -94,7 +94,7 @@ Our official experiment uses the following provided hyper-parameters for IR mode
 For the neural dense retrieval or embedding models, the configs are listed below.
 
 | Model name                                                                                                                  | batch size<br/> (for encode documentation or query) | Backend APIs <br/>(to load the model) |
-|:----------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------|:-------------------------------------:|
+|:----------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------:|:-------------------------------------:|
 | [sentence-transformers/all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)                     | 16                                                  |         Sentence transformer          |
 | [facebook/contriever-msmarco](https://huggingface.co/facebook/contriever-msmarco)                                           | 16                                                  |         Huggingface-AutoModel         |
 | [Tool-COLT/contriever-base-msmarco-v1-ToolBenchG3](https://huggingface.co/Tool-COLT/contriever-base-msmarco-v1-ToolBenchG3) | 16                                                  |         Sentence transformer          |
@@ -116,7 +116,7 @@ For the neural dense retrieval or embedding models, the configs are listed below
 For the re-ranking based models, we also provide their evaluation config as below.
 
 | Model name                                                                                                    | batch size<br/> (for encode documentation or query) | Backend APIs <br/>(to load the model) |
-|:--------------------------------------------------------------------------------------------------------------|:----------------------------------------------------|:-------------------------------------:|
+|:--------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------:|:-------------------------------------:|
 | [castorini/monot5-base-msmarco](https://huggingface.co/castorini/monot5-base-msmarco)                         | 16                                                  |         AnswerDotAI/rerankers         |
 | [jinaai/jina-reranker-v2-base-multilingual](https://huggingface.co/jinaai/jina-reranker-v2-base-multilingual) | 16                                                  |         AnswerDotAI/rerankers         |
 | [BAAI/bge-reranker-v2-gemma](https://huggingface.co/BAAI/bge-reranker-v2-gemma)                               | 2                                                   |        FlagOpen/FlagEmbedding         |
