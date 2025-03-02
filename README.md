@@ -89,41 +89,39 @@ The code can be also found in `example/embedding.py` for reference.
 
 
 ### Protocol for model evaluation
-
-Our official experiment uses the following provided config for IR model evaluations.
+Our official experiment uses the following provided hyper-parameters for IR model evaluations.
 
 For the neural dense retrieval or embedding models, the configs are listed below.
 
 | Model name                                                                                                                  | batch size<br/> (for encode documentation or query) | Backend APIs <br/>(to load the model) |
-|:----------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------:|:-------------------------------------:|
-| [sentence-transformers/all-MiniLM-L6-v2](https://huggingface.co/models?other=text-embeddings-inference)                     |                                                     |         Sentence transformer          |
-| [facebook/contriever-msmarco](https://huggingface.co/facebook/contriever-msmarco)                                           |                                                     |         Huggingface AutoModel         |
-| [Tool-COLT/contriever-base-msmarco-v1-ToolBenchG3](https://huggingface.co/Tool-COLT/contriever-base-msmarco-v1-ToolBenchG3) |                                                     |         Sentence transformer          |
-| [intfloat/e5-small-v2](https://huggingface.co/intfloat/e5-small-v2)                                                         |                                                     |         Huggingface AutoModel         |
-| [intfloat/e5-base-v2](https://huggingface.co/intfloat/e5-base-v2)                                                           |                                                     |         Huggingface AutoModel         |
-| [intfloat/e5-large-v2](https://huggingface.co/intfloat/e5-large-v2)                                                         |                                                     |         Huggingface AutoModel         |
-| [sentence-transformers/gtr-t5-base](https://huggingface.co/sentence-transformers/gtr-t5-base)                               |                                                     |         Sentence transformer          |
-| [sentence-transformers/gtr-t5-large](https://huggingface.co/sentence-transformers/gtr-t5-large)                             |                                                     |         Sentence transformer          |
-| [Alibaba-NLP/gte-base-en-v1.5](https://huggingface.co/Alibaba-NLP/gte-base-en-v1.5)                                         |                                                     |         Huggingface AutoModel         |
-| [Alibaba-NLP/gte-large-en-v1.5](https://huggingface.co/Alibaba-NLP/gte-large-en-v1.5)                                       |                                                     |         Huggingface AutoModel         |
-| [BAAI/bge-base-en-v1.5](https://huggingface.co/BAAI/bge-base-en-v1.5)                                                       |                                                     |         Huggingface AutoModel         |
-| [BAAI/bge-large-en-v1.5](https://huggingface.co/BAAI/bge-large-en-v1.5)                                                     |                                                     |         Huggingface AutoModel         |
-| [intfloat/e5-mistral-7b-instruct](https://huggingface.co/intfloat/e5-mistral-7b-instruct)                                   |                                                     |         Sentence transformer          |
-| [Alibaba-NLP/gte-Qwen2-1.5B-instruct](https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct)                           |                                                     |         Sentence transformer          |
-| [bzantium/NV-Embed-v1](https://huggingface.co/bzantium/NV-Embed-v1)                                                         |                                                     |         Sentence transformer          |
-| [GritLM/GritLM-7B](https://huggingface.co/GritLM/GritLM-7B)                                                                 |                                                     |                GritLM                 |
+|:----------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------|:-------------------------------------:|
+| [sentence-transformers/all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)                     | 16                                                  |         Sentence transformer          |
+| [facebook/contriever-msmarco](https://huggingface.co/facebook/contriever-msmarco)                                           | 16                                                  |         Huggingface-AutoModel         |
+| [Tool-COLT/contriever-base-msmarco-v1-ToolBenchG3](https://huggingface.co/Tool-COLT/contriever-base-msmarco-v1-ToolBenchG3) | 16                                                  |         Sentence transformer          |
+| [intfloat/e5-small-v2](https://huggingface.co/intfloat/e5-small-v2)                                                         | 16                                                  |         Huggingface-AutoModel         |
+| [intfloat/e5-base-v2](https://huggingface.co/intfloat/e5-base-v2)                                                           | 16                                                  |         Huggingface-AutoModel         |
+| [intfloat/e5-large-v2](https://huggingface.co/intfloat/e5-large-v2)                                                         | 16                                                  |         Huggingface-AutoModel         |
+| [sentence-transformers/gtr-t5-base](https://huggingface.co/sentence-transformers/gtr-t5-base)                               | 4                                                   |         Sentence transformer          |
+| [sentence-transformers/gtr-t5-large](https://huggingface.co/sentence-transformers/gtr-t5-large)                             | 4                                                   |         Sentence transformer          |
+| [Alibaba-NLP/gte-base-en-v1.5](https://huggingface.co/Alibaba-NLP/gte-base-en-v1.5)                                         | 16                                                  |         Huggingface-AutoModel         |
+| [Alibaba-NLP/gte-large-en-v1.5](https://huggingface.co/Alibaba-NLP/gte-large-en-v1.5)                                       | 4                                                   |         Huggingface-AutoModel         |
+| [BAAI/bge-base-en-v1.5](https://huggingface.co/BAAI/bge-base-en-v1.5)                                                       | 16                                                  |         Huggingface-AutoModel         |
+| [BAAI/bge-large-en-v1.5](https://huggingface.co/BAAI/bge-large-en-v1.5)                                                     | 16                                                  |         Huggingface-AutoModel         |
+| [intfloat/e5-mistral-7b-instruct](https://huggingface.co/intfloat/e5-mistral-7b-instruct)                                   | 2                                                   |         Sentence transformer          |
+| [Alibaba-NLP/gte-Qwen2-1.5B-instruct](https://huggingface.co/Alibaba-NLP/gte-Qwen2-1.5B-instruct)                           | 2                                                   |         Sentence transformer          |
+| [bzantium/NV-Embed-v1](https://huggingface.co/bzantium/NV-Embed-v1)                                                         | 2                                                   |         Sentence transformer          |
+| [GritLM/GritLM-7B](https://huggingface.co/GritLM/GritLM-7B)                                                                 | 2                                                   |                GritLM                 |
 
 
 For the re-ranking based models, we also provide their evaluation config as below.
 
 | Model name                                                                                                    | batch size<br/> (for encode documentation or query) | Backend APIs <br/>(to load the model) |
 |:--------------------------------------------------------------------------------------------------------------|:----------------------------------------------------|:-------------------------------------:|
-| [castorini/monot5-base-msmarco](https://huggingface.co/castorini/monot5-base-msmarco)                         |                                                     |         AnswerDotAI/rerankers         |
-| [jinaai/jina-reranker-v2-base-multilingual](https://huggingface.co/jinaai/jina-reranker-v2-base-multilingual) |                                                     |         AnswerDotAI/rerankers         |
-| [BAAI/bge-reranker-v2-gemma](https://huggingface.co/BAAI/bge-reranker-v2-gemma)                               |                                                     |        FlagOpen/FlagEmbedding         |
-| [BAAI/bge-reranker-v2-m3](https://huggingface.co/BAAI/bge-reranker-v2-m3)                                     |                                                     |        FlagOpen/FlagEmbedding         |
-| [mixedbread-ai/mxbai-rerank-large-v1](https://huggingface.co/mixedbread-ai/mxbai-rerank-large-v1)             |                                                     |         AnswerDotAI/rerankers         |
-
+| [castorini/monot5-base-msmarco](https://huggingface.co/castorini/monot5-base-msmarco)                         | 16                                                  |         AnswerDotAI/rerankers         |
+| [jinaai/jina-reranker-v2-base-multilingual](https://huggingface.co/jinaai/jina-reranker-v2-base-multilingual) | 16                                                  |         AnswerDotAI/rerankers         |
+| [BAAI/bge-reranker-v2-gemma](https://huggingface.co/BAAI/bge-reranker-v2-gemma)                               | 2                                                   |        FlagOpen/FlagEmbedding         |
+| [BAAI/bge-reranker-v2-m3](https://huggingface.co/BAAI/bge-reranker-v2-m3)                                     | 128                                                 |        FlagOpen/FlagEmbedding         |
+| [mixedbread-ai/mxbai-rerank-large-v1](https://huggingface.co/mixedbread-ai/mxbai-rerank-large-v1)             | 16                                                  |         AnswerDotAI/rerankers         |
 
 
 
