@@ -1,5 +1,5 @@
 <div align="center">
-   <h1>ToolRet 🔍</h1>
+   <h1>Tool Retrieval (ToolRet) 🔍</h1>
 </div>
 
 🔧 Retrieving useful tools from a large-scale toolset is an important step for Large language model (LLMs) in tool learning. This project (AutoTools) contribute to (i) _the first comprehensive tool retrieval benchmark_ to systematically evaluate existing information retrieval (IR) models on tool retrieval tasks; and (ii) a large-scale training dataset to optimize the expertise of IR models on this tool retrieval task.
