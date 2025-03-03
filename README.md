@@ -209,13 +209,5 @@ This work
       journal  = {arXiv},
 }
 ```
-Our previous work
-```text
-@inproceedings{autotools,
-	title     = {Tool Learning in the Wild: Empowering Language Models as Automatic Tool Agents},
-	author    = {Zhengliang Shi, Shen Gao, Lingyong Yan, Yue Feng, Xiuyi Chen, Zhumin Chen, Dawei Yin, Suzan Verberne, Zhaochun Ren},
-	year      = 2025,
-	booktitle = {WWW}
-}
-```
+
 
