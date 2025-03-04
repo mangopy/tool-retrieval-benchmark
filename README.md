@@ -7,7 +7,7 @@
 
 ## News
 
-- **[2025.3.4]** Our [Paper]() is released! See our [Paper]() for details.
+- **[2025.3.4]** Our [Paper](https://arxiv.org/pdf/2503.01763) is released! See our [Paper](https://arxiv.org/pdf/2503.01763) for details.
 - **[2024.3.1]** We re-organize our code to make the evaluation more easier. And the dataset has been released on HuggingFace([Toolset](https://huggingface.co/datasets/mangopy/ToolRet-Tools) and [Queries](https://huggingface.co/datasets/mangopy/ToolRet-Queries)).
 - **[2024.2.28]** We employ an [online retrieval demo](https://huggingface.co/spaces/mangopy/ToolRet-demo) on huggingface space! You can try different lightweighted IR models for an intuitive demonstration.
 - **[2024.2.25]** Our [ToolRet leaderboard](https://huggingface.co/spaces/mangopy/ToolRet-leaderboard) is released on Huggingface 🎉. You can see our leaderboard to see the performance of a wide range of commonly-used information retrieval models. 
