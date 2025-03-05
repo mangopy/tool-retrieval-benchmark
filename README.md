@@ -2,21 +2,21 @@
    <h1>🔍 Tool Retrieval (ToolRet)</h1>
 </div>
 
-🔍 Retrieving useful 🔧 tools from a large-scale toolset is an important step for Large language model (LLMs) in tool learning. This project (ToolRet) contribute to (i) _the first comprehensive tool retrieval benchmark_ to systematically evaluate existing information retrieval (IR) models on tool retrieval tasks; and (ii) a large-scale training dataset to optimize the expertise of IR models on this tool retrieval task.
+🔍 Retrieving useful 🛠️ tools from a large-scale toolset is an important step for Large language model (LLMs) in tool learning. This project (ToolRet) contribute to (i) _the first comprehensive tool retrieval benchmark_ to systematically evaluate existing information retrieval (IR) models on tool retrieval tasks; and (ii) a large-scale training dataset to optimize the expertise of IR models on this tool retrieval task.
 
 
-## News
+## 🔥 News
 
-- **[2025.3.4]** Our [Paper](https://arxiv.org/pdf/2503.01763) is released! See our [Paper](https://arxiv.org/pdf/2503.01763) for details.
+- **[2025.3.4]** Our 📑 [Paper](https://arxiv.org/pdf/2503.01763) is released! See our 📑 [Paper](https://arxiv.org/pdf/2503.01763) for details.
 - **[2024.3.1]** We re-organize our code to make the evaluation more easier. And the dataset has been released on HuggingFace([Toolset](https://huggingface.co/datasets/mangopy/ToolRet-Tools) and [Queries](https://huggingface.co/datasets/mangopy/ToolRet-Queries)).
-- **[2024.2.28]** We employ an [online retrieval demo](https://huggingface.co/spaces/mangopy/ToolRet-demo) on huggingface space! You can try different lightweighted IR models for an intuitive demonstration.
-- **[2024.2.25]** Our [ToolRet leaderboard](https://huggingface.co/spaces/mangopy/ToolRet-leaderboard) is released on Huggingface 🎉. You can see our leaderboard to see the performance of a wide range of commonly-used information retrieval models. 
-- **[2024.2.20]** The blog for our work can be accessed by clicking this [link](https://mangopy.github.io/tool-retrieval-benchmark/).
+- **[2024.2.28]** We employ an 🤗 [online retrieval demo](https://huggingface.co/spaces/mangopy/ToolRet-demo) on huggingface space! You can try different lightweighted IR models for an intuitive demonstration.
+- **[2024.2.25]** Our 🤗 [ToolRet leaderboard](https://huggingface.co/spaces/mangopy/ToolRet-leaderboard) is released on Huggingface 🎉. You can see our leaderboard to see the performance of a wide range of commonly-used information retrieval models. 
+- **[2024.2.20]** The blog for our work can be accessed by clicking this 💻 [link](https://mangopy.github.io/tool-retrieval-benchmark/).
 - **[2024.2.17]** Main code is released on this [Github](https://github.com/mangopy/tool-retrieval-benchmark/).
 - **[2024.12.15]** The dataset has been built.
 
   
-## A New Benchmark -- ToolRet
+## 🌍 A New Benchmark -- ToolRet
 A concrete example for our evaluation dataset.
 ```json
 {
@@ -63,7 +63,7 @@ A concrete example for our evaluation dataset.
 conda env create -f requirements.yml
 ```
 
-## Evaluation
+## ✅ Evaluation
 
 ### Quick start
 In this work, we systematically evaluate a wide range of advanced IR models.
@@ -128,7 +128,7 @@ For the re-ranking based models, we also provide their evaluation config as belo
 
 
 
-## A Large-scale Training dataset -- ToolRet-train
+## 🚀 A Large-scale Training dataset -- ToolRet-train
 
 A concrete example in our training dataset.
 ```txt
@@ -165,7 +165,7 @@ We evaluate a wide range of retrieval models on ToolRet. Our evaluation also sup
 ![img.png](./assets/images/results.png)
 
 
-## Resource
+## 🧩 Resource
 
 Our benchmark is built by collecting existing well-established datasets. We provide the raw collected datasets and the processed version (e.g., the ToolRet).
 
@@ -192,14 +192,14 @@ Our benchmark is built by collecting existing well-established datasets. We prov
 | 🔥e5-base-v2        | The [e5-base-v2](https://huggingface.co/intfloat/e5-base-v2) model trained on ToolRet-Train         | [Huggingface model](https://huggingface.co/mangopy/ToolRet-trained-e5-base-v2) |
  
 
-## Acknowledgement
+## 🤩 Acknowledgement
 We sincerely thank prior work, such as [MAIR](https://github.com/sunnweiwei/MAIR/) and [ToolBench](https://github.com/OpenBMB/ToolBench), which inspire this project or provide strong technique reference.
 
-## Todo
+## 📈 Todo
 - [ ] The model checkpoint is uploading. Please wait from just few hours.
 - [ ] More detailed examples will be added to make the evaluation on our ToolRet benchmark more easier.
 
-## Citation
+## 🧑‍🎓️ Citation
 This work
 ```text
 @article{ToolRetrieval,
