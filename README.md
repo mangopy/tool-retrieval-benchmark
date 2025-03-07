@@ -200,7 +200,7 @@ We sincerely thank prior work, such as [MAIR](https://github.com/sunnweiwei/MAIR
 - [ ] The model checkpoint is uploading. Please wait from just few hours.
 - [ ] More detailed examples will be added to make the evaluation on our ToolRet benchmark more easier.
 
-## 🧑‍🎓️ Citation
+## Citation
 This work
 ```text
 @article{ToolRetrieval,
