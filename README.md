@@ -6,6 +6,8 @@
 
 If you find this project useful, feel free to ⭐️ it and give it a [Citation](#Citation)!
 
+[![arXiv](https://img.shields.io/badge/arXiv-<INDEX>-<COLOR>.svg)](https://arxiv.org/abs/<INDEX>)
+
 ## 🔥 News
 
 - **[2025.3.4]** Our 📑 [Paper](https://arxiv.org/pdf/2503.01763) is released! See our 📑 [Paper](https://arxiv.org/pdf/2503.01763) for details.
