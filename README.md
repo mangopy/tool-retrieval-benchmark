@@ -6,7 +6,7 @@
 
 If you find this project useful, feel free to ⭐️ it and give it a [Citation](#Citation)!
 
-[![arXiv](https://img.shields.io/badge/arXiv-<INDEX>-<COLOR>.svg)](https://arxiv.org/abs/<INDEX>)
+[![arXiv](https://img.shields.io/badge/arXiv-2503.01763.svg)](https://arxiv.org/abs/2503.01763)
 
 ## 🔥 News
 
