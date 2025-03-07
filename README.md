@@ -4,7 +4,7 @@
 
 🔍 Retrieving useful 🛠️ tools from a large-scale toolset is an important step for Large language model (LLMs) in tool learning. This project (ToolRet) contribute to (i) _the first comprehensive tool retrieval benchmark_ to systematically evaluate existing information retrieval (IR) models on tool retrieval tasks; and (ii) a large-scale training dataset to optimize the expertise of IR models on this tool retrieval task.
 
-If you find this project useful, feel free to ⭐️ it and give it a [citation](#citation)!
+If you find this project useful, feel free to ⭐️ it and give it a [Citation](#Citation)!
 
 ## 🔥 News
 
