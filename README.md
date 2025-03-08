@@ -204,11 +204,11 @@ We sincerely thank prior work, such as [MAIR](https://github.com/sunnweiwei/MAIR
 ## Citation
 This work
 ```text
-@article{ToolRetrieval,
-      title    = {Retrieval Models Aren't Tool-Savvy: Benchmarking Tool Retrieval for Large Language Models},
-      author   = {Zhengliang Shi, Yuhan Wang, Lingyong Yan, Pengjie Ren, Shuaiqiang Wang, Dawei Yin, Zhaochun Ren},
-      year     = 2025,
-      journal  = {arXiv},
+@article{shi2025retrieval,
+  title={Retrieval Models Aren't Tool-Savvy: Benchmarking Tool Retrieval for Large Language Models},
+  author={Shi, Zhengliang and Wang, Yuhan and Yan, Lingyong and Ren, Pengjie and Wang, Shuaiqiang and Yin, Dawei and Ren, Zhaochun},
+  journal={arXiv preprint arXiv:2503.01763},
+  year={2025}
 }
 ```
 
