@@ -7,16 +7,6 @@
 If you find this project useful, feel free to ⭐️ it and give it a [Citation](#Citation)!
 
 
-## 🔥 News
-
-- **[2025.3.4]** Our 📑 [Paper](https://arxiv.org/abs/2503.01763) is released! See our 📑 [Paper](https://arxiv.org/abs/2503.01763) for details.
-- **[2024.3.1]** We re-organize our code to make the evaluation more easier. And the dataset has been released on HuggingFace([Toolset](https://huggingface.co/datasets/mangopy/ToolRet-Tools) and [Queries](https://huggingface.co/datasets/mangopy/ToolRet-Queries)).
-- **[2024.2.28]** We employ an 🤗 [online retrieval demo](https://huggingface.co/spaces/mangopy/ToolRet-demo) on huggingface space! You can try different lightweighted IR models for an intuitive demonstration.
-- **[2024.2.25]** Our 🤗 [ToolRet leaderboard](https://huggingface.co/spaces/mangopy/ToolRet-leaderboard) is released on Huggingface 🎉. You can see our leaderboard to see the performance of a wide range of commonly-used information retrieval models. 
-- **[2024.2.20]** The blog for our work can be accessed by clicking this 💻 [link](https://mangopy.github.io/tool-retrieval-benchmark/).
-- **[2024.2.17]** Main code is released on this [Github](https://github.com/mangopy/tool-retrieval-benchmark/).
-- **[2024.12.15]** The dataset has been built.
-
   
 ## 🌍 A New Benchmark -- ToolRet
 A concrete example for our evaluation dataset.
@@ -171,46 +161,4 @@ We evaluate a wide range of retrieval models on ToolRet. Our evaluation also sup
 
 Our benchmark is built by collecting existing well-established datasets. We provide the raw collected datasets and the processed version (e.g., the ToolRet).
 
-Our benchmark is built by collecting existing well-established datasets. We provide the raw collected datasets and the processed version (e.g., the ToolRet).
-
-1. The raw dataset can be downloaded from the following link.
-
-| Dataset         | Note                                                                                                                  |                                         Link                                         |
-|:----------------:|----------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| Raw data        | The raw data contains all the full collected datasets (before sampling via k-means)                                   | [Huggingface dataset](https://huggingface.co/datasets/mangopy/ToolRet-before-sample) |
-| ToolRet-Queries | The final evaluation benchmark, which is a subset sampled from raw dataset through k-means. (This is our v0 version.) |    [Huggingface dataset](https://huggingface.co/datasets/mangopy/ToolRet-Queries)    |
-| ToolRet-Tools   | The tool retrieval corpus, which contains 43k+ tools collected from existing tool-use datasets.                       |     [Huggingface dataset](https://huggingface.co/datasets/mangopy/ToolRet-Tools)     |
-| ToolRet-Train   | A large-scaling tool retrieval training datasets, which contains more than 200k tool retrieval tasks.                 | [Huggingface dataset] |
-
-> The ToolRet-Train will be released after the peer review period.
-
-2. The trained IR models can be downloaded from the following link
-
-| Dataset             | Note                                                      |         Link          |
-|:--------------------:|----------------------------------------------------------|---------------------|
-| 🔥bge-large-en-v1.5 | The [bge-large-en-v1.5](https://huggingface.co/BAAI/bge-large-en-v1.5) model trained on ToolRet-Train. | [Huggingface model](https://huggingface.co/mangopy/ToolRet-trained-bge-large-en-v1.5) |
-| 🔥bge-base-en-v1.5  | The [bge-base-en-v1.5](https://huggingface.co/BAAI/bge-base-en-v1.5) model trained on ToolRet-Train   | [Huggingface model](https://huggingface.co/mangopy/ToolRet-trained-bge-base-en-v1.5) |
-| 🔥e5-large-v2       | The [e5-large-v2](https://huggingface.co/intfloat/e5-large-v2) model trained on ToolRet-Train         | [Huggingface model](https://huggingface.co/mangopy/ToolRet-trained-e5-large-v2) |
-| 🔥e5-base-v2        | The [e5-base-v2](https://huggingface.co/intfloat/e5-base-v2) model trained on ToolRet-Train         | [Huggingface model](https://huggingface.co/mangopy/ToolRet-trained-e5-base-v2) |
- 
-
-## 🤩 Acknowledgement
-We sincerely thank prior work, such as [MAIR](https://github.com/sunnweiwei/MAIR/) and [ToolBench](https://github.com/OpenBMB/ToolBench), which inspire this project or provide strong technique reference.
-
-## 📈 Todo
-- [x] The model checkpoint is uploading. Please wait from just few hours.
-- [ ] More detailed examples will be added to make the evaluation on our ToolRet benchmark more easier.
-
-## Citation
-This work
-```text
-@article{shi2025retrieval,
-  title={Retrieval Models Aren't Tool-Savvy: Benchmarking Tool Retrieval for Large Language Models},
-  author={Shi, Zhengliang and Wang, Yuhan and Yan, Lingyong and Ren, Pengjie and Wang, Shuaiqiang and Yin, Dawei and Ren, Zhaochun},
-  journal={arXiv preprint arXiv:2503.01763},
-  year={2025}
-}
-```
-
-## Contact
-If you have any questions, feel free to contact `shizhl@sdu.edu.cn` or `zhengliang.shii@gmail.com`. Glad to receive any questions, feedback, or potential collaboration.
+We will release the raw dataset, ToolRet-Train and trained IR models after the peer review period.
