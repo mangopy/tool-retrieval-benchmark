@@ -117,7 +117,7 @@ def trec_eval(qrels: Dict[str, Dict[str, int]],
     return all_metrics
 
 def load_model_tokenizer(model_name: str):
-    if model_name in ['e5-mistral-7b-instruct', 'gtr-t5', 'gte-Qwen2-1.5B', "Tool-COLT", 'GritLM']:
+    if any([m in model_name for m in ['e5-mistral-7b-instruct', 'gtr-t5', 'gte-Qwen2-1.5B', "Tool-COLT", 'GritLM']]):
         st = True
     else:
         st = False
