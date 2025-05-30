@@ -162,6 +162,14 @@ We evaluate a wide range of retrieval models on ToolRet. Our evaluation also sup
 
 ## 🧩 Resource
 
-Our benchmark is built by collecting existing well-established datasets. We provide the raw collected datasets and the processed version (e.g., the ToolRet).
+Our benchmark is built by collecting existing well-established datasets. We provide the raw collected datasets and the processed version (e.g., the ToolRet) Please see our [paper](https://arxiv.org/abs/2503.01763) for more details.
 
-We will release the raw dataset, ToolRet-Train and trained IR models after the peer review period.
+## Citation
+```txt
+@inproceedings{shi2025retrieval,
+  title={Retrieval Models Aren't Tool-Savvy: Benchmarking Tool Retrieval for Large Language Models},
+  author={Shi, Zhengliang and Wang, Yuhan and Yan, Lingyong and Ren, Pengjie and Wang, Shuaiqiang and Yin, Dawei and Ren, Zhaochun},
+  booktitle={Proceedings of the 63nd Annual Meeting of the Association for Computational Linguistics},
+  year={2025}
+}
+```
