@@ -162,7 +162,7 @@ We evaluate a wide range of retrieval models on ToolRet. Our evaluation also sup
 
 ## 🧩 Resource
 
-Our benchmark is built by collecting existing well-established datasets. We provide the raw collected datasets and the processed version (e.g., the ToolRet) Please see our [paper](https://arxiv.org/abs/2503.01763) for more details.
+Our benchmark is built by collecting existing well-established datasets. We provide the raw collected datasets and the processed version (e.g., the ToolRet). See our [paper](https://arxiv.org/abs/2503.01763) for more details.
 
 ## Citation
 ```txt
