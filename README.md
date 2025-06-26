@@ -152,6 +152,8 @@ A concrete example in our training dataset.
     "prompt": "Given a `URL availability` task, retrieve tools that check if a given URL is archived and accessible on a specific date in the Wayback Machine."
 }
 ```
+The fully dataset is now released on [Huggingface](https://huggingface.co/datasets/mangopy/ToolRet-Training-20w). ✨Star our repo if you find it useful✨.
+
 We use the [FlagEmbedding](https://github.com/FlagOpen/FlagEmbedding/) python library to train the embedding models. To train the embedding models on our datasets, please see the `script/train.sh` for more details. The version of FlagEmbedding is `1.3.3` as provided in the `requirements.yml` file.
 
 ## 📊 Model Experiments Results
