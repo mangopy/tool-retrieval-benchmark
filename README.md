@@ -10,7 +10,14 @@
 If you find this project useful, feel free to ⭐️ it and give it a [Citation](#Citation)!
 
 
-  
+## News
+
+- **[2025.5.20]** Our paper has been accepted by the [ACL 2025](https://2025.aclweb.org/) 🎉🎉🎉. See our updated [paper](https://arxiv.org/pdf/2503.01763) for more details.
+- **[2025.3.5]** Our code was released, including main code for evaluation and training script. 
+- **[2025.3.3]** The first version of our paper has been released in arxiv. See our paper in this [link](https://arxiv.org/abs/2503.01763).
+
+
+
 ## 🌍 A New Benchmark -- ToolRet
 A concrete example for our evaluation dataset.
 ```json
