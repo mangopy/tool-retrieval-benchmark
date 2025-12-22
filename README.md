@@ -2,6 +2,15 @@
    <h1>🔍 Tool Retrieval (ToolRet)</h1>
 </div>
 
+![Project](https://img.shields.io/badge/Project-ToolRet-blue?logo=github)
+[![Website](https://img.shields.io/badge/Website-Live-4CAF50?logo=google-chrome)](https://mangopy.github.io/tool-retrieval-benchmark/)
+[![Leaderboard](https://img.shields.io/badge/Leaderboard-HuggingFace-orange?logo=huggingface)](https://huggingface.co/spaces/mangopy/ToolRet-leaderboard)
+[![Demo](https://img.shields.io/badge/Demo-Interactive-purple?logo=huggingface)](https://huggingface.co/spaces/mangopy/ToolRet-demo)
+[![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface)](https://huggingface.co/collections/mangopy/tool-retrieval)
+[![Paper](https://img.shields.io/badge/Paper-arXiv-b31b1b?logo=arxiv)](https://arxiv.org/abs/2503.01763)
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen)]()
+
+
 > Retrieval Models Aren’t Tool-Savvy: Benchmarking Tool Retrieval for Large Language Models
 
 
